@@ -47,37 +47,19 @@ style="background-image: url('{% image page.hero_background_image original %}');
 </div>
 
  <!-- Include Palace Language Section -->
- <section class="py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center">{{ page.palace_language_title }}</h2>
-    <div class="mt-6">
-      {% for feature in page.palace_language_features %}
-        <div class="mb-8">
-          <i class="{{ feature.value.icon }} text-4xl text-primary"></i>
-          <h3 class="text-xl font-semibold mt-2">{{ feature.value.title }}</h3>
-          <p class="mt-2 text-gray-600">{{ feature.value.text }}</p>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+ {% include 'home/blocks/palace_language_section.html' %}
+
  <!-- Include About Us Section -->
- <section class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center">{{ page.about_us_title }}</h2>
-    <div class="mt-6 text-center">
-      {{ page.about_us_description|richtext }}
-    </div>
-  </div>
-</section>
- {% comment %} <!-- Include Add-Ons Section -->
+ {% include 'home/blocks/about_us_section.html' %}
+
+ <!-- Include Add-Ons Section -->
  {% include 'home/blocks/features_section.html' %}
 
  <!-- Include Testimonials Section -->
  {% include 'home/blocks/testimonials_section.html' %}
 
  <!-- Include Trusted by Brands Section -->
- {% include 'home/blocks/trusted_by_brands_section.html' %} {% endcomment %}
+ {% include 'home/blocks/trusted_by_brands_section.html' %}
 
   <!-- Rest of the home page content goes here -->
 {% endblock %}

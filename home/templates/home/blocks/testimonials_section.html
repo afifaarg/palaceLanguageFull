@@ -1,0 +1,15 @@
+{% load static  wagtailcore_tags  wagtailimages_tags %}
+<!-- templates/includes/testimonials_section.html -->
+<section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center">Testimonials</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for testimonial in page.testimonials.all %}
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <p class="text-gray-600 italic">"{{ testimonial.quote }}"</p>
+            <p class="mt-4 font-semibold">{{ testimonial.name }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
